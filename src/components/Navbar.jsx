@@ -13,7 +13,7 @@ export default function Navbar() {
       initial={{ y: -40, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 1, ease: [0.22, 0.61, 0.36, 1] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${scrolled ? 'bg-ink-deep/85 backdrop-blur-lg' : ''}`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 bg-ink-deep ${scrolled ? 'shadow-sm' : ''}`}
     >
       <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-5 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-3 group">
