@@ -59,19 +59,18 @@ export default function Hero() {
             variants={fadeUp}
             className="h-display text-[13vw] md:text-[7vw] lg:text-[104px] text-cream mb-5"
           >
-            {BUSINESS.name}<br />
-            <span className="italic font-light text-gold-soft">& Beauty Parlour</span>
+            {BUSINESS.name}
           </motion.h1>
 
           <motion.h2
             variants={fadeUp}
             className="h-display text-[8vw] md:text-[3.5vw] lg:text-[48px] text-cream/90 mb-6"
           >
-            Enhance Your <span className="italic font-light text-gold-soft">Beauty</span> at {BUSINESS.name}.
+            Professional home services & <span className="italic font-light text-gold-soft">Premium Bridal beauty services</span>.
           </motion.h2>
 
           <motion.p variants={fadeUp} className="text-cream/75 max-w-md text-[15px] leading-relaxed mb-10">
-            Premium makeup, hair & bridal beauty services in Mumbai — crafted by professional artists who treat every face as a canvas.
+            Professional home services and premium bridal makeup artistry in Sirsa — crafted by professional artists who treat every face as a canvas.
           </motion.p>
 
           <motion.div variants={fadeUp} className="flex flex-wrap gap-3 mb-12">

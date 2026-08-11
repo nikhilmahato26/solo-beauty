@@ -3,6 +3,7 @@ import Hero from './sections/Hero'
 import Marquee from './sections/Marquee'
 import About from './sections/About'
 import Services from './sections/Services'
+import Offers from './sections/Offers'
 import Bridal from './sections/Bridal'
 import Testimonials from './sections/Testimonials'
 import WhyUs from './sections/WhyUs'
@@ -22,6 +23,7 @@ export default function App() {
         <Marquee />
         <About />
         <Services />
+        <Offers />
         <Bridal />
         <Testimonials />
         <WhyUs />
