@@ -1,74 +1,129 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { FaInstagram, FaFacebookF, FaYoutube, FaWhatsapp, FaPhoneAlt } from 'react-icons/fa'
 import { NAV_LINKS, BUSINESS } from '../constants/site'
-import useScrolled from '../hooks/useScrolled'
-import ArrowIcon from './ArrowIcon'
 
 export default function Navbar() {
-  const scrolled = useScrolled(40)
   const [open, setOpen] = useState(false)
 
   return (
-    <motion.header
-      initial={{ y: -40, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 1, ease: [0.22, 0.61, 0.36, 1] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 bg-ink-deep ${scrolled ? 'shadow-sm' : ''}`}
-    >
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-5 flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-3 group">
-          <img src="/logo.jpeg" alt={`${BUSINESS.name} Logo`} className="h-12 w-auto mix-blend-multiply" />
+    <header className="w-full bg-ink border-b border-cream/20 z-50">
+      {/* Top Banner */}
+      <div className="w-full bg-[#FFF0F2] border-b border-cream/10 px-6 py-2 hidden md:block">
+        <div className="max-w-[1400px] mx-auto flex items-center justify-between text-[11px] font-semibold text-cream tracking-wide">
+          <span>Welcome to Solo Beauty Sirsa - Where Beauty Meets Perfection</span>
+          <div className="flex items-center gap-3">
+            <span>Follow Us :</span>
+            <a href={BUSINESS.socials.whatsapp} target="_blank" rel="noreferrer" className="hover:opacity-80"><FaWhatsapp size={13} /></a>
+            <a href={BUSINESS.socials.instagram} target="_blank" rel="noreferrer" className="hover:opacity-80"><FaInstagram size={13} /></a>
+            <a href={BUSINESS.socials.facebook} target="_blank" rel="noreferrer" className="hover:opacity-80"><FaFacebookF size={12} /></a>
+            <a href={BUSINESS.socials.youtube} target="_blank" rel="noreferrer" className="hover:opacity-80"><FaYoutube size={13} /></a>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Navbar */}
+      <div className="max-w-[1400px] mx-auto px-6 py-4 flex items-center justify-between">
+        {/* Brand Logo & Name */}
+        <a href="#top" className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
+            <img 
+              src="/logo.jpeg" 
+              alt="SD Logo" 
+              className="h-14 w-14 rounded-full object-cover border border-cream/30"
+              onError={(e) => {
+                // fallback if image not found or loaded
+                e.target.style.display = 'none'
+              }}
+            />
+            <div className="flex flex-col text-cream font-bold leading-none">
+              <span className="text-xl tracking-wider font-serif">SOLO BEAUTY</span>
+              <span className="text-[10px] tracking-[0.25em] text-center border-t border-b border-cream/30 py-0.5 my-0.5">— SIRSA —</span>
+              <span className="text-[9px] tracking-[0.15em] font-normal">PROFESSIONAL</span>
+            </div>
+          </div>
         </a>
 
-        <nav className="hidden lg:flex items-center gap-10 text-cream/80 text-[12px] tracking-wider-2 uppercase">
-          {NAV_LINKS.map((l) => (
-            <a key={l.href} href={l.href} className="btn-line hover:text-cream">{l.label}</a>
+        {/* Center Nav Links */}
+        <nav className="hidden lg:flex items-center gap-6 text-[12px] font-bold text-cream tracking-wider">
+          {NAV_LINKS.map((link) => (
+            <a 
+              key={link.label} 
+              href={link.href} 
+              className="hover:text-cream-soft transition-colors py-1 border-b-2 border-transparent hover:border-cream"
+            >
+              {link.label}
+            </a>
           ))}
         </nav>
 
-        <div className="hidden sm:flex items-center gap-5">
-          <span className="hidden xl:flex items-center gap-2 text-cream/70 text-[11px] tracking-wider-2 uppercase">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4">
-              <circle cx="12" cy="12" r="9" />
-              <path d="M12 7v5l3 2" />
-            </svg>
-            Open {BUSINESS.openHours}
-          </span>
-          <a href="#book" className="pill text-cream inline-flex">
-            Book Now <ArrowIcon />
+        {/* Right Info Section */}
+        <div className="hidden md:flex items-center gap-6">
+          <div className="flex items-center gap-3 text-cream">
+            <div className="p-2.5 rounded-full border border-cream/20 bg-ink">
+              <FaPhoneAlt size={14} className="text-cream" />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-[10px] tracking-wider text-cream/70 font-semibold uppercase">Booking & Inquiry</span>
+              <a href={`tel:${BUSINESS.phoneRaw}`} className="text-[18px] font-extrabold tracking-wide hover:underline text-cream leading-tight">
+                {BUSINESS.phone}
+              </a>
+            </div>
+          </div>
+
+          <a 
+            href="#book" 
+            className="bg-cream text-white font-bold text-[11px] tracking-widest uppercase px-5 py-3 rounded hover:bg-cream/90 transition-all shadow-md"
+          >
+            Book Appointment
           </a>
         </div>
 
+        {/* Mobile Menu Button */}
         <button
           aria-label="Menu"
           className="lg:hidden text-cream"
           onClick={() => setOpen(!open)}
         >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             {open ? <path d="M18 6 6 18M6 6l12 12" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
           </svg>
         </button>
       </div>
 
+      {/* Mobile Drawer */}
       {open && (
-        <div className="lg:hidden bg-ink-deep border-t border-cream/10">
-          <nav className="flex flex-col px-6 py-6 gap-5 text-cream/80 text-[12px] tracking-wider-2 uppercase">
-            {NAV_LINKS.map((l) => (
-              <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="hover:text-gold">{l.label}</a>
+        <div className="lg:hidden bg-white border-t border-cream/15">
+          <nav className="flex flex-col px-6 py-6 gap-4 text-cream font-bold text-[13px] tracking-wider">
+            {NAV_LINKS.map((link) => (
+              <a 
+                key={link.label} 
+                href={link.href} 
+                onClick={() => setOpen(false)} 
+                className="hover:text-cream-soft transition-colors border-b border-cream/5 pb-2"
+              >
+                {link.label}
+              </a>
             ))}
-            <a href="#book" onClick={() => setOpen(false)} className="pill gold w-fit">Book Now</a>
-            <span className="flex items-center gap-2 text-cream/60 text-[11px] tracking-wider-2 normal-case">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4">
-                <circle cx="12" cy="12" r="9" />
-                <path d="M12 7v5l3 2" />
-              </svg>
-              Open Daily · {BUSINESS.openHours}
-            </span>
+            
+            <div className="flex flex-col gap-4 pt-4">
+              <div className="flex items-center gap-3 text-cream">
+                <FaPhoneAlt size={14} />
+                <a href={`tel:${BUSINESS.phoneRaw}`} className="text-[16px] font-bold">
+                  {BUSINESS.phone}
+                </a>
+              </div>
+              <a 
+                href="#book" 
+                onClick={() => setOpen(false)} 
+                className="bg-cream text-white text-center font-bold text-[12px] tracking-widest uppercase py-3 rounded shadow-md"
+              >
+                Book Appointment
+              </a>
+            </div>
           </nav>
         </div>
       )}
-
-      <div className="hairline" />
-    </motion.header>
+    </header>
   )
 }

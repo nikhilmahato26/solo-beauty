@@ -1,111 +1,135 @@
 import { motion } from 'framer-motion'
-import { FaPhoneAlt } from 'react-icons/fa'
-import { fadeUp, stagger, viewportOnce } from '../utils/motion'
-import { TRUST_BADGES, BUSINESS } from '../constants/site'
-import { telLink } from '../utils/links'
-import TickIcon from '../components/TickIcon'
+import { FaWhatsapp, FaPhoneAlt, FaCheck, FaCalendarAlt, FaStar, FaHeart, FaSmile, FaMagic } from 'react-icons/fa'
+import { BUSINESS } from '../constants/site'
+import { waLink } from '../utils/links'
 
 export default function Hero() {
+  const serviceCategories = [
+    { label: 'Bridal Booking', icon: <FaHeart className="text-cream text-sm" /> },
+    { label: 'Party Makeup', icon: <FaStar className="text-cream text-sm" /> },
+    { label: 'Personal Grooming', icon: <FaMagic className="text-cream text-sm" /> },
+    { label: 'All Beauty Services', icon: <FaSmile className="text-cream text-sm" /> },
+  ]
+
+  const leftBadges = [
+    'Trained & Certified Experts',
+    'Hygienic & Safe',
+    'Premium Products',
+    'On-Time Service',
+    '100% Customer Satisfaction',
+  ]
+
   return (
-    <section className="relative min-h-screen flex items-end overflow-hidden pt-28 pb-12 md:pb-20">
-      <div className="absolute inset-0">
-        <img
-          src="https://images.pexels.com/photos/16799889/pexels-photo-16799889.jpeg"
-          alt="Bridal makeup artistry"
-          className="w-full h-full object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/40 to-ink" />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink/80 via-transparent to-ink/60" />
-      </div>
+    <section className="relative w-full bg-[#FFF0F2] pt-8 pb-16 border-b border-cream/20">
+      <div className="max-w-[1400px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        {/* Left Column: Branding & Features */}
+        <div className="lg:col-span-4 flex flex-col justify-center text-cream">
+          <h1 className="font-serif text-[45px] md:text-[60px] font-black tracking-tight leading-[0.95] uppercase">
+            BEAUTY.<br />
+            CONFIDENCE.<br />
+            YOU.
+          </h1>
+          
+          <p className="font-script text-3xl text-cream-soft my-4 leading-none">
+            Feel beautiful. Be beautiful.
+          </p>
 
-      {/* Floating spinning badge */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.7 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.8, duration: 1 }}
-        className="absolute top-32 right-6 md:right-12 z-10 hidden sm:block"
-      >
-        <div className="badge-circle relative">
-          <div className="spin-slow absolute inset-0">
-            <svg viewBox="0 0 200 200" className="w-full h-full">
-              <defs>
-                <path id="circ" d="M 100,100 m -78,0 a 78,78 0 1,1 156,0 a 78,78 0 1,1 -156,0" />
-              </defs>
-              <text fill="#9B1D44" fontFamily="Inter" fontSize="10" letterSpacing="6">
-                <textPath href="#circ">BRIDAL SPECIALIST · LUXURY BEAUTY · SIRSA · </textPath>
-              </text>
-            </svg>
-          </div>
-          <div className="relative">
-            <div className="h-italiana text-[11px] tracking-wider-3 text-cream/60">EST.</div>
-            <div className="h-display text-3xl text-cream">2014</div>
-          </div>
-        </div>
-      </motion.div>
+          <p className="text-[14px] font-bold text-cream/80 mb-6 max-w-sm leading-relaxed">
+            Premium Beauty & Wellness Services for Women, Men & Kids.
+          </p>
 
-      <motion.div
-        variants={stagger}
-        initial="hidden"
-        animate="show"
-        className="relative z-10 max-w-[1400px] mx-auto w-full px-6 md:px-10"
-      >
-        <div className="max-w-3xl">
-          <motion.div variants={fadeUp} className="flex items-center gap-3 mb-8">
-            <span className="w-10 h-px bg-gold" />
-            <span className="eyebrow text-gold">Luxury Beauty · Bridal · Hair Studio</span>
-          </motion.div>
-
-          <motion.h1
-            variants={fadeUp}
-            className="h-display text-[13vw] md:text-[7vw] lg:text-[104px] text-cream mb-5"
-          >
-            {BUSINESS.name}
-          </motion.h1>
-
-          <motion.h2
-            variants={fadeUp}
-            className="h-display text-[8vw] md:text-[3.5vw] lg:text-[48px] text-cream/90 mb-6"
-          >
-            Professional home services & <span className="italic font-light text-gold-soft">Premium Bridal beauty services</span>.
-          </motion.h2>
-
-          <motion.p variants={fadeUp} className="text-cream/75 max-w-md text-[15px] leading-relaxed mb-10">
-            Professional home services and premium bridal makeup artistry in Sirsa — crafted by professional artists who treat every face as a canvas.
-          </motion.p>
-
-          <motion.div variants={fadeUp} className="flex flex-wrap gap-3 mb-12">
-            <a href="#book" className="pill gold">Book Appointment</a>
-            <a href="#bridal" className="pill text-cream">Bridal Booking</a>
-            <a href={telLink()} className="pill text-cream"><FaPhoneAlt size={12} /> Call Now</a>
-          </motion.div>
-
-          <motion.div variants={fadeUp} className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-3 max-w-2xl text-[12px] text-cream/70">
-            {TRUST_BADGES.map((b) => (
-              <div key={b} className="flex items-center gap-2"><TickIcon /> {b}</div>
+          {/* Checklist */}
+          <div className="flex flex-wrap gap-x-4 gap-y-3 mb-8 max-w-md">
+            {leftBadges.map((badge) => (
+              <div key={badge} className="flex items-center gap-2 bg-white/60 border border-cream/10 px-3 py-1.5 rounded-full shadow-sm">
+                <div className="w-4 h-4 rounded-full bg-cream/10 border border-cream/20 flex items-center justify-center shrink-0">
+                  <FaCheck size={8} className="text-cream" />
+                </div>
+                <span className="text-[10px] font-extrabold tracking-wide uppercase text-cream/90">{badge}</span>
+              </div>
             ))}
-          </motion.div>
+          </div>
+
+          {/* Doorstep Badge */}
+          <div className="w-fit bg-cream text-white font-black text-[10px] tracking-[0.15em] uppercase px-5 py-3 rounded-full flex items-center justify-center gap-1.5 shadow-md">
+            <span>DUBAI-BASED DOORSTEP SERVICES</span>
+            <span className="text-[9px]">★</span>
+            <span>FIRST TIME IN SIRSA</span>
+            <span className="text-[9px]">★</span>
+          </div>
         </div>
 
-        <motion.div
-          variants={fadeUp}
-          className="mt-16 md:mt-24 grid grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl"
-        >
-          {[
-            { n: '12+', label: 'Years of Craft' },
-            { n: '500+', label: 'Brides Styled' },
-            { n: '5.0', label: 'Client Rating' },
-          ].map((s, i) => (
-            <div key={s.label} className={`bg-cream/5 backdrop-blur-xl border border-cream/10 rounded-2xl p-5 ${i === 2 ? 'col-span-2 md:col-span-1' : ''}`}>
-              <div className="num text-4xl text-gold">{s.n}</div>
-              <div className="eyebrow text-cream/60 mt-1">{s.label}</div>
-            </div>
-          ))}
-        </motion.div>
-      </motion.div>
+        {/* Center Column: Model Banner Image & Booking Overlay */}
+        <div className="lg:col-span-4 flex flex-col items-center justify-center relative">
+          <div className="w-full max-w-[340px] aspect-[3/4.2] rounded-[24px] overflow-hidden border border-cream/20 shadow-lg relative bg-white">
+            <img 
+              src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=600&q=80" // Indian Bride Model
+              alt="Solo Beauty Model" 
+              className="w-full h-full object-cover"
+            />
+            {/* Soft pink bottom overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-cream/20 via-transparent to-transparent"></div>
+          </div>
 
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-cream/40 text-[10px] tracking-wider-3 uppercase flex flex-col items-center gap-2">
-        <span>Scroll</span>
-        <span className="w-px h-10 bg-cream/30 animate-pulse" />
+          {/* Floating WhatsApp Booking Card */}
+          <div className="absolute bottom-[-24px] bg-white border border-cream/15 rounded-2xl p-4 flex items-center gap-3.5 shadow-lg w-full max-w-[300px]">
+            <div className="w-12 h-12 rounded-full bg-whatsapp flex items-center justify-center shrink-0 shadow-md">
+              <FaWhatsapp size={26} className="text-white animate-pulse" />
+            </div>
+            <div className="flex flex-col text-cream leading-tight">
+              <span className="text-[9px] tracking-[0.2em] font-extrabold uppercase text-cream/70">BOOKING & INQUIRY</span>
+              <a href={waLink(`Hi, I would like to book an appointment with Solo Beauty.`)} target="_blank" rel="noreferrer" className="text-[20px] font-black tracking-wide hover:underline">
+                {BUSINESS.phone}
+              </a>
+              <span className="text-[10px] text-cream/60 font-semibold mt-0.5">We're just a message away!</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Column: Appointment Booking Box */}
+        <div className="lg:col-span-4 mt-8 lg:mt-0 flex justify-center">
+          <div className="w-full max-w-[340px] bg-white border border-cream/15 rounded-[20px] p-6 shadow-md flex flex-col text-cream">
+            <div className="text-center border-b border-cream/10 pb-4 mb-5">
+              <h3 className="text-lg font-black tracking-wider uppercase">Book Your Appointment</h3>
+              <p className="text-[11px] text-cream/60 font-bold mt-1">We're here to pamper you!</p>
+            </div>
+
+            {/* Services Icons List */}
+            <div className="space-y-3 mb-6">
+              {serviceCategories.map((cat) => (
+                <div key={cat.label} className="flex items-center justify-between p-3 rounded-lg border border-cream/5 bg-ink/35 hover:bg-ink/50 transition-colors">
+                  <div className="flex items-center gap-3">
+                    <div className="w-7 h-7 rounded-full bg-white border border-cream/15 flex items-center justify-center shadow-sm shrink-0">
+                      {cat.icon}
+                    </div>
+                    <span className="text-[11.5px] font-extrabold tracking-wider uppercase text-cream/90">{cat.label}</span>
+                  </div>
+                  <FaCheck size={9} className="text-cream/50" />
+                </div>
+              ))}
+            </div>
+
+            {/* CTAs */}
+            <a 
+              href={waLink(`Hi Solo Beauty, I want to book an appointment.`)}
+              target="_blank" 
+              rel="noreferrer"
+              className="w-full bg-whatsapp text-white py-3.5 rounded-lg font-extrabold text-[11px] tracking-[0.18em] uppercase flex items-center justify-center gap-2 hover:bg-opacity-95 transition-all shadow-md"
+            >
+              <FaWhatsapp size={16} />
+              <span>BOOK NOW ON WHATSAPP</span>
+            </a>
+
+            <div className="text-center mt-4">
+              <span className="text-[10px] text-cream/60 font-bold">or Call us: </span>
+              <a href={`tel:${BUSINESS.phoneRaw}`} className="text-[13px] font-extrabold hover:underline">
+                {BUSINESS.phone}
+              </a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   )

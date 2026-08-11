@@ -4,14 +4,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink: '#FDF6F7',
-        'ink-deep': '#FFFFFF',
-        cream: '#9B1D44',
+        ink: '#FFF0F2', // Soft pink background
+        'ink-deep': '#FFFFFF', // Clean white background for cards
+        cream: '#9B1D44', // Deep burgundy brand color
         'cream-soft': '#C2597A',
         gold: '#9B1D44',
         'gold-soft': '#C2597A',
         rose: '#1A1714',
         mute: '#9A8F84',
+        whatsapp: '#25D366',
       },
       fontFamily: {
         serif: ['Fraunces', 'serif'],

@@ -1,38 +1,26 @@
 import Navbar from './components/Navbar'
+import GlobalOffices from './sections/GlobalOffices'
 import Hero from './sections/Hero'
-import Marquee from './sections/Marquee'
-import About from './sections/About'
 import Services from './sections/Services'
 import Offers from './sections/Offers'
-import Bridal from './sections/Bridal'
+import About from './sections/About'
 import Testimonials from './sections/Testimonials'
-import WhyUs from './sections/WhyUs'
-import Gallery from './sections/Gallery'
-import MeetExpert from './sections/MeetExpert'
-import BookAppointment from './sections/BookAppointment'
-import Contact from './sections/Contact'
 import Footer from './sections/Footer'
 import FloatingActions from './components/FloatingActions'
 
 export default function App() {
   return (
-    <div className="grain">
+    <div className="grain min-h-screen flex flex-col justify-between">
       <Navbar />
-      <main id="top">
+      <main id="top" className="flex-grow">
+        <GlobalOffices />
         <Hero />
-        <Marquee />
-        <About />
         <Services />
         <Offers />
-        <Bridal />
+        <About />
         <Testimonials />
-        <WhyUs />
-        <Gallery />
-        <MeetExpert />
-        <BookAppointment />
-        <Contact />
-        <Footer />
       </main>
+      <Footer />
       <FloatingActions />
     </div>
   )

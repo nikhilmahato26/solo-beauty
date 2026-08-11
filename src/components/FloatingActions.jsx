@@ -1,37 +1,37 @@
-import { motion } from 'framer-motion'
-import { FaWhatsapp, FaPhoneAlt } from 'react-icons/fa'
-import { waLink, telLink } from '../utils/links'
-import { BUSINESS } from '../constants/site'
+import { FaWhatsapp } from 'react-icons/fa'
+import { waLink } from '../utils/links'
 
 export default function FloatingActions() {
+  const whatsappUrl = waLink('Hi Solo Beauty, I want to book an appointment.')
+
   return (
     <>
-      <motion.a
-        href={waLink(`Hi ${BUSINESS.name}, I would like to know more about your services.`)}
+      {/* Sticky Vertical WhatsApp Banner on the Right Edge */}
+      <a
+        href={whatsappUrl}
         target="_blank"
         rel="noreferrer"
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ delay: 1, duration: 0.6, ease: [0.22, 0.61, 0.36, 1] }}
-        whileHover={{ scale: 1.1 }}
-        className="float-wa fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center"
-        aria-label="WhatsApp"
+        className="fixed right-0 top-[45%] -translate-y-1/2 z-50 bg-[#9B1D44] text-white py-5 px-2.5 rounded-l-2xl flex flex-col items-center gap-3 shadow-lg hover:bg-opacity-95 transition-all border-l border-y border-white/10 group cursor-pointer"
+        style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}
       >
-        <FaWhatsapp size={22} />
-      </motion.a>
+        <span className="text-[10px] font-black tracking-[0.25em] uppercase text-white/90 group-hover:text-white transition-colors">
+          WHATSAPP
+        </span>
+        <div className="w-7 h-7 rounded-full bg-[#25D366] flex items-center justify-center text-white shadow-sm shrink-0">
+          <FaWhatsapp size={16} />
+        </div>
+      </a>
 
-      <motion.a
-        href={telLink()}
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.6, ease: [0.22, 0.61, 0.36, 1] }}
-        whileHover={{ scale: 1.05 }}
-        className="float-call fixed bottom-6 left-6 z-50 hidden md:flex items-center gap-3 px-5 h-14 rounded-full bg-gold text-ink"
-        aria-label="Call"
+      {/* Floating Circular WhatsApp Bubble in the Bottom Right Corner */}
+      <a
+        href={whatsappUrl}
+        target="_blank"
+        rel="noreferrer"
+        className="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-lg hover:scale-105 transition-transform"
+        aria-label="WhatsApp Chat"
       >
-        <FaPhoneAlt size={16} />
-        <span className="eyebrow">Call Studio</span>
-      </motion.a>
+        <FaWhatsapp size={28} />
+      </a>
     </>
   )
 }

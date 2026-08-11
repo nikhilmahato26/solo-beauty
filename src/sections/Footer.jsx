@@ -1,77 +1,92 @@
-import { FaInstagram, FaFacebookF, FaWhatsapp } from 'react-icons/fa'
-import { BUSINESS } from '../constants/site'
-import { telLink, mailLink, waLink } from '../utils/links'
+import { FaWhatsapp, FaInstagram, FaFacebookF, FaYoutube, FaEnvelope, FaPhoneAlt, FaRegClock, FaHeart } from 'react-icons/fa'
+import { BUSINESS, NAV_LINKS } from '../constants/site'
 
 export default function Footer() {
   return (
-    <footer className="bg-ink-deep text-cream pt-24 pb-10">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10">
-        <div className="text-center mb-20">
-          <div className="eyebrow text-gold mb-6">{BUSINESS.name}</div>
-          <h2 className="h-display text-[14vw] md:text-[10vw] lg:text-[150px] text-cream leading-[0.9]">
-            {BUSINESS.name}
-          </h2>
-          <p className="text-cream/50 max-w-md mx-auto mt-6 text-[14px]">{BUSINESS.tagline} — {BUSINESS.address.city}, {BUSINESS.address.state}.</p>
-        </div>
-
-        <div className="hairline mb-12" />
-
-        <div className="grid md:grid-cols-4 gap-10 mb-16">
-          <div>
-            <div className="eyebrow text-cream/40 mb-5">Studio</div>
-            <p className="text-cream/70 text-[13.5px] leading-relaxed">
-              {BUSINESS.address.line1},<br />
-              {BUSINESS.address.line2},<br />
-              {BUSINESS.address.city} — {BUSINESS.address.pincode}
-            </p>
-            <div className="mt-5 flex items-center gap-2 text-cream/70 text-[13.5px]">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4">
-                <circle cx="12" cy="12" r="9" />
-                <path d="M12 7v5l3 2" />
-              </svg>
-              Open Daily · {BUSINESS.openHours}
+    <footer id="contact" className="bg-[#FFF0F2] text-cream pt-12 pb-8 border-t border-cream/20">
+      <div className="max-w-[1400px] mx-auto px-6">
+        
+        {/* Main Footer Grid (4 Columns) */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-cream/10 text-[12px] font-bold">
+          
+          {/* Logo & Social Links */}
+          <div className="flex flex-col gap-4">
+            <div className="flex items-center gap-2">
+              <img 
+                src="/logo.jpeg" 
+                alt="SD Logo" 
+                className="h-10 w-10 rounded-full object-cover border border-cream/30"
+              />
+              <div className="flex flex-col font-serif leading-none">
+                <span className="text-[13px] font-black uppercase tracking-wider">SOLO BEAUTY</span>
+                <span className="text-[8px] tracking-[0.2em] font-sans border-t border-cream/25 mt-0.5 pt-0.5 uppercase">SIRSA</span>
+              </div>
+            </div>
+            
+            {/* Social Icons */}
+            <div className="flex items-center gap-3.5 text-cream/70 mt-2">
+              <a href={BUSINESS.socials.whatsapp} target="_blank" rel="noreferrer" className="hover:text-cream transition-colors"><FaWhatsapp size={15} /></a>
+              <a href={BUSINESS.socials.instagram} target="_blank" rel="noreferrer" className="hover:text-cream transition-colors"><FaInstagram size={15} /></a>
+              <a href={BUSINESS.socials.facebook} target="_blank" rel="noreferrer" className="hover:text-cream transition-colors"><FaFacebookF size={13} /></a>
+              <a href={BUSINESS.socials.youtube} target="_blank" rel="noreferrer" className="hover:text-cream transition-colors"><FaYoutube size={15} /></a>
             </div>
           </div>
+
+          {/* Quick Links */}
           <div>
-            <div className="eyebrow text-cream/40 mb-5">Quick Links</div>
-            <ul className="space-y-2 text-cream/70 text-[13.5px]">
-              <li><a href="#about" className="btn-line">About</a></li>
-              <li><a href="#services" className="btn-line">Services</a></li>
-              <li><a href="#bridal" className="btn-line">Bridal Atelier</a></li>
-              <li><a href="#gallery" className="btn-line">Gallery</a></li>
-              <li><a href="#book" className="btn-line">Book Appointment</a></li>
-            </ul>
-          </div>
-          <div>
-            <div className="eyebrow text-cream/40 mb-5">Services</div>
-            <ul className="space-y-2 text-cream/70 text-[13.5px]">
-              <li>Bridal Makeup</li>
-              <li>HD / Party Makeup</li>
-              <li>Hair Styling</li>
-              <li>Skin & Facials</li>
-              <li>Nail Extensions</li>
-            </ul>
-          </div>
-          <div>
-            <div className="eyebrow text-cream/40 mb-5">Reach Us</div>
-            <ul className="space-y-2 text-cream/70 text-[13.5px]">
-              <li><a href={telLink()} className="btn-line">{BUSINESS.phone}</a></li>
-              <li><a href={mailLink()} className="btn-line">{BUSINESS.email}</a></li>
-              <li><a href={waLink()} target="_blank" rel="noreferrer" className="btn-line">WhatsApp</a></li>
-            </ul>
-            <div className="flex gap-3 mt-6">
-              <a href={BUSINESS.socials.instagram} className="w-9 h-9 rounded-full border border-cream/20 flex items-center justify-center hover:bg-cream hover:text-ink transition" aria-label="Instagram"><FaInstagram size={14} /></a>
-              <a href={BUSINESS.socials.facebook} className="w-9 h-9 rounded-full border border-cream/20 flex items-center justify-center hover:bg-cream hover:text-ink transition" aria-label="Facebook"><FaFacebookF size={14} /></a>
-              <a href={waLink()} target="_blank" rel="noreferrer" className="w-9 h-9 rounded-full border border-cream/20 flex items-center justify-center hover:bg-cream hover:text-ink transition" aria-label="WhatsApp"><FaWhatsapp size={14} /></a>
+            <h4 className="text-[10px] tracking-[0.2em] font-extrabold uppercase text-cream/60 mb-4">QUICK LINKS</h4>
+            <div className="grid grid-cols-2 gap-2 text-[11px] font-bold">
+              {NAV_LINKS.map((link) => (
+                <a 
+                  key={link.label} 
+                  href={link.href} 
+                  className="hover:text-cream-soft hover:underline transition-all"
+                >
+                  {link.label}
+                </a>
+              ))}
             </div>
+          </div>
+
+          {/* Contact Details */}
+          <div>
+            <h4 className="text-[10px] tracking-[0.2em] font-extrabold uppercase text-cream/60 mb-4">CONTACT US</h4>
+            <div className="space-y-2.5 text-[11px]">
+              <div className="flex items-center gap-2">
+                <FaPhoneAlt size={10} className="text-cream/55" />
+                <a href={`tel:${BUSINESS.phoneRaw}`} className="hover:underline">{BUSINESS.phone}</a>
+              </div>
+              <div className="flex items-center gap-2">
+                <FaEnvelope size={10} className="text-cream/55" />
+                <a href={`mailto:${BUSINESS.email}`} className="hover:underline">{BUSINESS.email}</a>
+              </div>
+            </div>
+          </div>
+
+          {/* Opening Hours */}
+          <div>
+            <h4 className="text-[10px] tracking-[0.2em] font-extrabold uppercase text-cream/60 mb-4">OPENING HOURS</h4>
+            <div className="flex items-start gap-2 text-[11px]">
+              <FaRegClock size={11} className="text-cream/55 mt-0.5 shrink-0" />
+              <div className="flex flex-col">
+                <span className="font-bold">Monday to Sunday</span>
+                <span className="text-cream/85 font-semibold mt-0.5">10:00 AM - 8:00 PM</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        {/* Bottom Credits & Copyright */}
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-6 text-[10px] font-semibold text-cream/60 tracking-wider uppercase">
+          <span>© 2026 {BUSINESS.name} Sirsa. All rights reserved.</span>
+          <div className="flex items-center gap-1">
+            <span>Designed with</span>
+            <FaHeart size={8} className="text-cream animate-pulse" />
+            <span>for Beauty</span>
           </div>
         </div>
 
-        <div className="hairline mb-6" />
-        <div className="flex flex-col md:flex-row justify-between gap-3 text-cream/40 text-[11px] uppercase tracking-wider-2">
-          <div>© 2026 {BUSINESS.name}. All rights reserved.</div>
-          <div>Designed with care · Sirsa, Haryana</div>
-        </div>
       </div>
     </footer>
   )

@@ -1,41 +1,267 @@
 export const BUSINESS = {
-  name: 'SoloBeautySirsa',
-  tagline: 'Premium Makeover, Beauty & Bridal Parlour',
-  phone: '+91 84338 63331',
-  phoneRaw: '+918433863331',
-  whatsapp: '918433863331',
-  email: 'sapnasdkamble@gmail.com',
+  name: 'SOLO BEAUTY',
+  tagline: 'Where Beauty Meets Perfection',
+  phone: '81 684 83 684',
+  phoneRaw: '+918168483684',
+  whatsapp: '918168483684',
+  email: 'sonobeautysirsa@gmail.com',
   address: {
     line1: 'Near New Bus Stand',
     line2: 'Savera hotel wali gali',
     city: 'Sirsa',
     state: 'Haryana',
-    pincode: '',
+    pincode: '125055',
   },
-  openHours: '11 AM – 9 PM',
+  openHours: '10:00 AM - 8:00 PM',
   hours: [
-    { day: 'Mon – Sun', time: '11:00 AM — 9:00 PM' },
+    { day: 'Mon – Sun', time: '10:00 AM — 8:00 PM' },
     { day: 'Bridal Bookings', time: 'By Appointment' },
   ],
   socials: {
-    instagram: '#',
-    facebook: '#',
+    instagram: 'https://instagram.com',
+    facebook: 'https://facebook.com',
+    youtube: 'https://youtube.com',
+    whatsapp: 'https://wa.me/918168483684',
   },
 }
 
 export const NAV_LINKS = [
-  { label: 'About', href: '#about' },
-  { label: 'Services', href: '#services' },
-  { label: 'Bridal', href: '#bridal' },
-  { label: 'Gallery', href: '#gallery' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'HOME', href: '#top' },
+  { label: 'WOMEN', href: '#categories' },
+  { label: 'MEN', href: '#categories' },
+  { label: 'KIDS', href: '#categories' },
+  { label: 'CATALOGUE', href: '#popular-services' },
+  { label: 'GALLERY', href: '#gallery' },
+  { label: 'ABOUT US', href: '#about' },
+  { label: 'CONTACT US', href: '#contact' },
+]
+
+export const GLOBAL_OFFICES = [
+  {
+    country: 'INDIA',
+    city: 'Mohali',
+    phone: '+91 77101 10525',
+    time: '10:00 AM - 10:00 PM',
+    mapLink: 'https://maps.google.com/?q=Mohali',
+    img: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=400&q=80', // Taj Mahal
+  },
+  {
+    country: 'KENYA',
+    city: 'Nairobi',
+    phone: '+254 722 801 898',
+    time: '10:00 AM - 10:00 PM',
+    mapLink: 'https://maps.google.com/?q=Nairobi',
+    img: 'https://images.unsplash.com/photo-1549082907-531bdfc3cc28?auto=format&fit=crop&w=400&q=80', // Nairobi
+  },
+  {
+    country: 'SOUTH AFRICA',
+    city: 'uMhlanga, KZN',
+    phone: '+27 84 061 8013',
+    time: '10:00 AM - 10:00 PM',
+    mapLink: 'https://maps.google.com/?q=uMhlanga+KZN',
+    img: 'https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=400&q=80', // Durban/South Africa
+  },
+  {
+    country: 'DUBAI',
+    city: 'United Arab Emirates',
+    phone: '+971 56 737 9250',
+    time: '10:00 AM - 10:00 PM',
+    mapLink: 'https://maps.google.com/?q=Dubai+Burj+Al+Arab',
+    img: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=400&q=80', // Dubai Burj Al Arab
+    isHeadOffice: true,
+  },
+]
+
+export const MAIN_CATEGORIES = [
+  {
+    id: 'women',
+    title: 'WOMEN',
+    desc: 'Hair | Skin | Makeup\nNails | Waxing & More',
+    img: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=600&q=80',
+  },
+  {
+    id: 'men',
+    title: 'MEN',
+    desc: 'Hair | Beard | Skin\nGrooming & More',
+    img: 'https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=600&q=80',
+  },
+  {
+    id: 'kids',
+    title: 'KIDS',
+    desc: 'Hair | Grooming\nSpecial Kids Services',
+    img: 'https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=600&q=80',
+  },
+]
+
+export const POPULAR_OFFERS = [
+  {
+    title: 'HAIRCUT',
+    sub: '(Women)',
+    original: '599',
+    price: '399',
+    discount: '33% OFF',
+    tag: 'hair',
+    img: 'https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=300&q=80',
+  },
+  {
+    title: 'HAIR SPA',
+    sub: '(Loreal)',
+    original: '1299',
+    price: '799',
+    discount: '38% OFF',
+    tag: 'hair',
+    img: '/hair_spa.png',
+  },
+  {
+    title: 'BRIDAL MAKEUP',
+    sub: '(Premium)',
+    original: '24999',
+    price: '14999',
+    discount: '40% OFF',
+    tag: 'makeup',
+    img: 'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=300&q=80',
+  },
+  {
+    title: 'MANICURE',
+    sub: '(O3+ D-Tan)',
+    original: '799',
+    price: '499',
+    discount: '37% OFF',
+    tag: 'nails',
+    img: '/manicure.png',
+  },
+  {
+    title: 'FACIAL',
+    sub: '(O3+ Platinum)',
+    original: '1499',
+    price: '899',
+    discount: '40% OFF',
+    tag: 'skin',
+    img: '/facial.png',
+  },
+]
+
+export const UNBEATABLE_OFFERS = [
+  {
+    title: 'THREADING',
+    price: '29',
+    original: '79',
+    discount: 'SAVE 63%',
+    img: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=300&q=80',
+  },
+  {
+    title: 'PARTY MAKEUP',
+    price: '899',
+    original: '1699',
+    discount: 'SAVE 47%',
+    img: 'https://images.unsplash.com/photo-1522338258045-8b5e4185838d?auto=format&fit=crop&w=300&q=80',
+  },
+  {
+    title: 'BRIDAL MAKEUP',
+    price: '4999',
+    original: '9999',
+    discount: 'SAVE 50%',
+    img: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=300&q=80',
+    badge: 'MOST LOVED',
+  },
+  {
+    title: 'PRE-BRIDAL SERVICES',
+    price: '3999',
+    original: '7999',
+    discount: 'SAVE 50%',
+    img: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=300&q=80',
+    subText: 'FULL PACKAGE',
+  },
+]
+
+export const WHY_CHOOSE_ITEMS = [
+  'Professional Experts',
+  'Hygienic & Safe',
+  'Premium Products',
+  'Affordable Prices',
+  'On-Time Service',
+  '100% Satisfaction',
+]
+
+export const WHY_CHOOSE_ABOUT = [
+  'Premium & Hygienic Services',
+  'Trained & Certified Professionals',
+  'High Quality Products',
+  'Personalized Beauty Solutions',
+  'Customer Satisfaction Guaranteed',
+]
+
+export const TEAM_MEMBERS = [
+  {
+    name: 'Neha S.',
+    role: 'Hair Stylist',
+    img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80',
+  },
+  {
+    name: 'Pooja B.',
+    role: 'Makeup Artist',
+    img: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=200&q=80',
+  },
+  {
+    name: 'Kavita R.',
+    role: 'Skin Expert',
+    img: 'https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=200&q=80',
+  },
+  {
+    name: 'Simran K.',
+    role: 'Nail Artist',
+    img: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=200&q=80',
+  },
+  {
+    name: 'Sapna D.',
+    role: 'Senior Stylist',
+    img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80',
+  },
+]
+
+export const INSTA_VIDEOS = [
+  {
+    img: 'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=200&q=80',
+    link: '#',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=200&q=80',
+    link: '#',
+    hasPlay: true,
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1590075865003-e48277faa558?auto=format&fit=crop&w=200&q=80',
+    link: '#',
+  },
+]
+
+export const GOOGLE_REVIEWS = [
+  {
+    name: 'Neha S.',
+    rating: 5,
+    text: 'Amazing services! The staff is very professional and friendly. Highly recommended!',
+    img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80',
+  },
+  {
+    name: 'Pooja B.',
+    rating: 5,
+    text: 'Best beauty salon in Sirsa! Loved the bridal makeup. Thank you Solo Beauty!',
+    img: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80',
+  },
+  {
+    name: 'Kavita R.',
+    rating: 5,
+    text: 'Clean, hygienic and best products. Must visit! Great experience.',
+    img: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&q=80',
+  },
 ]
 
 export const TRUST_BADGES = [
-  'Bridal Specialist',
-  'Premium Services',
-  'Hygienic Salon',
-  'Pro Artists',
+  'Certified Experts',
+  'Hygienic & Safe',
+  'Premium Products',
+  'On-Time Service',
+  '100% Satisfaction',
 ]
 
 export const ABOUT_HIGHLIGHTS = [
@@ -387,54 +613,52 @@ export const FEATURED_SERVICES = [
   },
 ]
 
-export const BRIDAL_PACKAGES = [
-  { name: 'Classic Bridal Package', price: '₹18,000' },
-  { name: 'Signature HD Bridal', price: '₹25,000' },
-  { name: 'Couture Wedding Suite', price: '₹40,000+' },
-]
-
-export const BRIDAL_INCLUDES = [
-  'HD/Airbrush Base',
-  'Custom Eye Look',
-  'Hair Styling & Setting',
-  'Saree / Lehenga Draping',
-  'Touch-up Kit',
-]
-
-export const TESTIMONIALS = [
-  {
-    quote:
-      "SoloBeautySirsa is my happy place. The team understood my skin tone instantly — my bridal makeup was breathtaking and lasted the entire 14-hour function.",
-    name: 'Simran K.',
-    role: 'Bride',
-  },
-  {
-    quote:
-      "Best HD makeover studio in Mumbai. The team is so professional and the parlour is spotless. Every visit feels like a complete reset.",
-    name: 'Avneet S.',
-    role: 'Regular Client',
-  },
-  {
-    quote:
-      "From skin prep to the final dupatta drape, the experience at SoloBeautySirsa was pure luxury. My wedding photographs are absolutely flawless.",
-    name: 'Jasmeet R.',
-    role: 'Bride',
-  },
-]
-
-export const WHY_US = [
-  { n: '01', title: 'Bridal Specialist', text: 'Hundreds of brides styled — from traditional weddings to court ceremonies and destination receptions.' },
-  { n: '02', title: 'Experienced Artists', text: 'A trained team that listens, adapts and delivers — every appointment, every face.' },
-  { n: '03', title: 'Hygienic Studio', text: 'Single-use applicators, sanitised stations, fresh towels — a parlour you can trust your skin with.' },
-  { n: '04', title: 'Premium Products', text: 'MAC, Huda, Charlotte Tilbury, Inglot, Olaplex, Schwarzkopf — only proven, professional formulas.' },
-  { n: '05', title: 'Affordable Luxury', text: 'Studio-quality work without premium price tags — Sakinaka\'s most loved beauty value.' },
-  { n: '06', title: 'Personalised Care', text: 'Custom consultations, skin-type-aware products, and looks built around you.' },
-]
-
-// Photos served from Cloudinary (cloud: dynbpb9u0) with f_auto,q_auto for fast,
-// responsive delivery. To add/replace, paste a public delivery URL from the
-// Cloudinary Media Library: https://res.cloudinary.com/dynbpb9u0/image/upload/<public_id>
-export const GALLERY = Array.from({ length: 12 }).map((_, i) => ({
-  src: `https://placehold.co/600x800/FDF6F7/9B1D44?text=Gallery+Image+${i + 1}`,
+export const GALLERY = Array.from({ length: 8 }).map((_, i) => ({
+  src: `https://images.unsplash.com/photo-${i % 2 === 0 ? '1562322140' : '1595777457'}?auto=format&fit=crop&w=400&q=80`,
   alt: `Gallery Image ${i + 1}`
 }))
+
+export const PACKAGES = [
+  {
+    original: '₹299',
+    price: '₹299',
+    points: '6',
+    items: ['Hair Cut', 'Beard Trim', 'Hair Wash', 'Face Wash'],
+    popular: false,
+  },
+  {
+    original: '₹399',
+    price: '₹399',
+    points: '8',
+    items: ['Hair Cut', 'Beard Trim', 'Hair Wash', 'Massage Chair (15 Min)'],
+    popular: true,
+  },
+  {
+    original: '₹329',
+    price: '₹329',
+    points: '8',
+    items: ['Hair Cut', 'Beard Trim', 'Hair Wash', 'Head Massage (15 Min)'],
+    popular: false,
+  },
+  {
+    original: '₹649',
+    price: '₹649',
+    points: '10',
+    items: ['Hair Cut', 'Beard Trim', 'Hair Colour', 'De-Tan'],
+    popular: false,
+  },
+  {
+    original: '₹799',
+    price: '₹799',
+    points: '12',
+    items: ['Hair Cut', 'Beard Trim', 'Dandruff Hair Spa'],
+    popular: false,
+  },
+  {
+    original: '₹999',
+    price: '₹999',
+    points: '18',
+    items: ['Hair Cut', 'Beard Trim', 'Golden Facial'],
+    popular: true,
+  },
+]
