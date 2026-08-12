@@ -30,7 +30,7 @@ export default function Navbar() {
             <img 
               src="/logo.jpeg" 
               alt="SD Logo" 
-              className="h-14 w-14 rounded-full object-cover border border-cream/30"
+              className="h-20 w-20 rounded-full object-cover border border-cream/30"
               onError={(e) => {
                 // fallback if image not found or loaded
                 e.target.style.display = 'none'
@@ -38,8 +38,8 @@ export default function Navbar() {
             />
             <div className="flex flex-col text-cream font-bold leading-none">
               <span className="text-xl tracking-wider font-serif">SOLO BEAUTY</span>
-              <span className="text-[10px] tracking-[0.25em] text-center border-t border-b border-cream/30 py-0.5 my-0.5">— SIRSA —</span>
-              <span className="text-[9px] tracking-[0.15em] font-normal">PROFESSIONAL</span>
+              <span className="text-[10px] tracking-[0.25em] text-center border-t border-b border-cream/30 py-0.5 my-0.5">— SIRSA,BHATINDA —</span>
+              <span className="text-[9px] tracking-[0.15em] font-normal">PROFESSIONAL HOME SERVICES</span>
             </div>
           </div>
         </a>

@@ -1,9 +1,11 @@
 import Navbar from './components/Navbar'
 import GlobalOffices from './sections/GlobalOffices'
 import Hero from './sections/Hero'
+import Marquee from './sections/Marquee'
 import Services from './sections/Services'
 import Offers from './sections/Offers'
 import About from './sections/About'
+import CareerPromise from './sections/CareerPromise'
 import Testimonials from './sections/Testimonials'
 import Footer from './sections/Footer'
 import FloatingActions from './components/FloatingActions'
@@ -15,9 +17,11 @@ export default function App() {
       <main id="top" className="flex-grow">
         <GlobalOffices />
         <Hero />
+        <Marquee />
         <Services />
         <Offers />
         <About />
+        <CareerPromise />
         <Testimonials />
       </main>
       <Footer />

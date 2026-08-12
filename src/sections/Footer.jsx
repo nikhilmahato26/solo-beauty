@@ -15,7 +15,7 @@ export default function Footer() {
               <img 
                 src="/logo.jpeg" 
                 alt="SD Logo" 
-                className="h-10 w-10 rounded-full object-cover border border-cream/30"
+                className="h-14 w-14 rounded-full object-cover border border-cream/30"
               />
               <div className="flex flex-col font-serif leading-none">
                 <span className="text-[13px] font-black uppercase tracking-wider">SOLO BEAUTY</span>
@@ -45,6 +45,12 @@ export default function Footer() {
                   {link.label}
                 </a>
               ))}
+              <a 
+                href="#careers" 
+                className="hover:text-cream-soft hover:underline transition-all"
+              >
+                CAREERS
+              </a>
             </div>
           </div>
 
@@ -80,10 +86,13 @@ export default function Footer() {
         {/* Bottom Credits & Copyright */}
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-6 text-[10px] font-semibold text-cream/60 tracking-wider uppercase">
           <span>© 2026 {BUSINESS.name} Sirsa. All rights reserved.</span>
-          <div className="flex items-center gap-1">
-            <span>Designed with</span>
-            <FaHeart size={8} className="text-cream animate-pulse" />
-            <span>for Beauty</span>
+          <div className="flex items-center gap-2">
+            <span>Designed by</span>
+            <img 
+              src="/adsindia-logo.png" 
+              alt="AdsIndia 24x7" 
+              className="h-9 w-auto object-contain mix-blend-multiply" 
+            />
           </div>
         </div>
 

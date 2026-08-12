@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 
 export default function Offers() {
   return (
-    <section className="py-16 bg-[#FFF0F2] border-b border-cream/20">
+    <section id="offers" className="py-16 bg-[#FFF0F2] border-b border-cream/20">
       <div className="max-w-[1400px] mx-auto px-6">
         
         {/* Section Header */}

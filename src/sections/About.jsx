@@ -1,5 +1,5 @@
-import { FaCheck, FaPlay, FaInstagram, FaFacebookF, FaYoutube, FaWhatsapp } from 'react-icons/fa'
-import { WHY_CHOOSE_ABOUT, TEAM_MEMBERS, INSTA_VIDEOS, BUSINESS } from '../constants/site'
+import { FaCheck, FaInstagram, FaFacebookF, FaYoutube, FaWhatsapp } from 'react-icons/fa'
+import { WHY_CHOOSE_ABOUT, BUSINESS } from '../constants/site'
 import { waLink } from '../utils/links'
 
 export default function About() {
@@ -38,45 +38,25 @@ export default function About() {
           </a>
         </div>
 
-        {/* Column 2: Our Professional Team (4 cols) */}
-        <div className="lg:col-span-4 bg-white border border-cream/15 rounded-2xl p-6 shadow-sm flex flex-col justify-between text-cream text-center">
-          <div>
-            <h3 className="text-[14px] font-black tracking-widest uppercase border-b border-cream/10 pb-3 mb-2">
-              Our Professional Team
-            </h3>
-            <span className="text-[10px] text-cream/60 font-bold uppercase tracking-wider block mb-6">
-              Experience. Expertise. Excellence.
+        {/* Column 2: Our Professional Team Image (4 cols) */}
+        <a 
+          href={waLink("Hi Solo Beauty, I saw your Sirsa Team photo and would like to book a service with them.")}
+          target="_blank"
+          rel="noreferrer"
+          className="lg:col-span-4 bg-white border border-cream/15 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow cursor-pointer flex flex-col justify-center items-center group relative min-h-[350px]"
+        >
+          <img 
+            src="/team.jpg" 
+            alt="Our Professional Team" 
+            className="w-full h-auto object-contain group-hover:scale-[1.01] transition-transform duration-300"
+          />
+          {/* Subtle hover overlay to prompt booking */}
+          <div className="absolute inset-0 bg-cream/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+            <span className="bg-white/95 text-cream text-[10px] font-black tracking-widest uppercase px-5 py-2.5 rounded-full shadow-md">
+              Book Consultation →
             </span>
-
-            {/* Team Members Avatar List */}
-            <div className="flex items-center justify-center -space-x-4 overflow-hidden mb-8">
-              {TEAM_MEMBERS.map((member) => (
-                <div 
-                  key={member.name} 
-                  className="inline-block h-16 w-16 rounded-full ring-4 ring-white overflow-hidden shadow-md relative group shrink-0"
-                >
-                  <img 
-                    src={member.img} 
-                    alt={member.name} 
-                    className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-cream/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <span className="text-[8px] text-white font-black uppercase tracking-wider">{member.name.split(' ')[0]}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
-
-          <a 
-            href={waLink("Hi Solo Beauty, I would like to book a consultation with your senior stylist.")}
-            target="_blank"
-            rel="noreferrer"
-            className="w-full border-2 border-cream text-cream font-extrabold text-[10px] tracking-[0.2em] uppercase py-3 rounded text-center hover:bg-cream hover:text-white transition-all shadow-sm"
-          >
-            MEET OUR TEAM →
-          </a>
-        </div>
+        </a>
 
         {/* Column 3: Beauty In Action (4 cols) */}
         <div className="lg:col-span-4 bg-white border border-cream/15 rounded-2xl p-6 shadow-sm flex flex-col justify-between text-cream text-center">
@@ -88,25 +68,16 @@ export default function About() {
               Watch our latest transformations & BTS on our social channels.
             </span>
 
-            {/* Video Thumbnails */}
-            <div className="grid grid-cols-3 gap-3 mb-6">
-              {INSTA_VIDEOS.map((vid, idx) => (
-                <div key={idx} className="aspect-[3/4.2] rounded-lg overflow-hidden relative shadow-sm bg-ink/30">
-                  <img 
-                    src={vid.img} 
-                    alt="Transformation Video" 
-                    className="w-full h-full object-cover"
-                  />
-                  {vid.hasPlay && (
-                    <div className="absolute inset-0 flex items-center justify-center bg-black/25">
-                      <div className="w-7 h-7 rounded-full bg-white/95 flex items-center justify-center shadow-md animate-pulse">
-                        <FaPlay size={9} className="text-cream ml-0.5" />
-                      </div>
-                    </div>
-                  )}
-                  <a href={BUSINESS.socials.instagram} target="_blank" rel="noreferrer" className="absolute inset-0 bg-cream/10 opacity-0 hover:opacity-100 transition-opacity"></a>
-                </div>
-              ))}
+            {/* Cloudinary Video Player */}
+            <div className="aspect-[3/4.2] rounded-xl overflow-hidden relative shadow-sm bg-ink/5 border border-cream/10 mb-6">
+              <video 
+                src="https://res.cloudinary.com/dynbpb9u0/video/upload/v1786524820/WhatsApp_Video_2026-08-12_at_13.55.37_comveb.mp4"
+                controls
+                playsInline
+                loop
+                muted
+                className="w-full h-full object-cover"
+              />
             </div>
 
             {/* Social media icons line */}
@@ -127,7 +98,6 @@ export default function About() {
             WATCH MORE VIDEOS
           </a>
         </div>
-
       </div>
     </section>
   )

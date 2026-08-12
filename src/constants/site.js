@@ -18,19 +18,17 @@ export const BUSINESS = {
     { day: 'Bridal Bookings', time: 'By Appointment' },
   ],
   socials: {
-    instagram: 'https://instagram.com',
+    instagram: 'https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=jkiyrdx',
     facebook: 'https://facebook.com',
-    youtube: 'https://youtube.com',
+    youtube: 'https://youtube.com/@solobeautysirsa?si=B-KX5lZxzumist4K',
     whatsapp: 'https://wa.me/918168483684',
   },
 }
 
 export const NAV_LINKS = [
   { label: 'HOME', href: '#top' },
-  { label: 'WOMEN', href: '#categories' },
-  { label: 'MEN', href: '#categories' },
-  { label: 'KIDS', href: '#categories' },
-  { label: 'CATALOGUE', href: '#popular-services' },
+  { label: 'SERVICES', href: '#categories' },
+  { label: 'OFFERS', href: '#offers' },
   { label: 'GALLERY', href: '#gallery' },
   { label: 'ABOUT US', href: '#about' },
   { label: 'CONTACT US', href: '#contact' },
@@ -51,7 +49,7 @@ export const GLOBAL_OFFICES = [
     phone: '+254 722 801 898',
     time: '10:00 AM - 10:00 PM',
     mapLink: 'https://maps.google.com/?q=Nairobi',
-    img: 'https://images.unsplash.com/photo-1549082907-531bdfc3cc28?auto=format&fit=crop&w=400&q=80', // Nairobi
+    img: '/kenya.png',
   },
   {
     country: 'SOUTH AFRICA',
@@ -59,7 +57,7 @@ export const GLOBAL_OFFICES = [
     phone: '+27 84 061 8013',
     time: '10:00 AM - 10:00 PM',
     mapLink: 'https://maps.google.com/?q=uMhlanga+KZN',
-    img: 'https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=400&q=80', // Durban/South Africa
+    img: '/south-africa.png',
   },
   {
     country: 'DUBAI',
