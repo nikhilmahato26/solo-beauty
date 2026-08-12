@@ -76,7 +76,7 @@ export default function Footer() {
               <FaRegClock size={11} className="text-cream/55 mt-0.5 shrink-0" />
               <div className="flex flex-col">
                 <span className="font-bold">Monday to Sunday</span>
-                <span className="text-cream/85 font-semibold mt-0.5">10:00 AM - 8:00 PM</span>
+                <span className="text-cream/85 font-semibold mt-0.5">{BUSINESS.openHours}</span>
               </div>
             </div>
           </div>

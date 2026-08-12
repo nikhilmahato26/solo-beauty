@@ -79,6 +79,21 @@ export default function BookAppointment() {
                 <ArrowIcon className="text-gold" size={14} />
               </a>
             ))}
+
+            {/* Scan to Book QR Code */}
+            <div className="flex items-center gap-5 p-5 border border-cream/10 rounded-2xl bg-cream/[0.02]">
+              <img 
+                src="/qr-code.jpg" 
+                alt="Scan to Book QR Code" 
+                className="w-20 h-20 rounded-lg object-contain bg-white p-1 border border-cream/20 shadow-sm shrink-0"
+              />
+              <div className="flex flex-col">
+                <span className="text-cream text-sm font-bold uppercase tracking-wider mb-1">Scan to Book</span>
+                <span className="text-cream/50 text-[11px] leading-relaxed">
+                  Scan this QR code with your phone camera to instantly start booking on WhatsApp.
+                </span>
+              </div>
+            </div>
           </div>
         </motion.div>
 

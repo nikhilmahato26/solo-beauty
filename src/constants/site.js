@@ -4,7 +4,7 @@ export const BUSINESS = {
   phone: '81 684 83 684',
   phoneRaw: '+918168483684',
   whatsapp: '918168483684',
-  email: 'sonobeautysirsa@gmail.com',
+  email: 'solobeautysirsa@gmail.com',
   address: {
     line1: 'Near New Bus Stand',
     line2: 'Savera hotel wali gali',
@@ -12,9 +12,9 @@ export const BUSINESS = {
     state: 'Haryana',
     pincode: '125055',
   },
-  openHours: '10:00 AM - 8:00 PM',
+  openHours: '9:00 AM - 8:00 PM',
   hours: [
-    { day: 'Mon – Sun', time: '10:00 AM — 8:00 PM' },
+    { day: 'Mon – Sun', time: '9:00 AM — 8:00 PM' },
     { day: 'Bridal Bookings', time: 'By Appointment' },
   ],
   socials: {

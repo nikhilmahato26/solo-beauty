@@ -2,6 +2,7 @@ import Navbar from './components/Navbar'
 import GlobalOffices from './sections/GlobalOffices'
 import Hero from './sections/Hero'
 import Marquee from './sections/Marquee'
+import BookAppointment from './sections/BookAppointment'
 import Services from './sections/Services'
 import Offers from './sections/Offers'
 import About from './sections/About'
@@ -18,6 +19,7 @@ export default function App() {
         <GlobalOffices />
         <Hero />
         <Marquee />
+        <BookAppointment />
         <Services />
         <Offers />
         <About />

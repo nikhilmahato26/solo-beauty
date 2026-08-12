@@ -108,10 +108,13 @@ export default function Navbar() {
             
             <div className="flex flex-col gap-4 pt-4">
               <div className="flex items-center gap-3 text-cream">
-                <FaPhoneAlt size={14} />
-                <a href={`tel:${BUSINESS.phoneRaw}`} className="text-[16px] font-bold">
-                  {BUSINESS.phone}
-                </a>
+                <FaPhoneAlt size={14} className="shrink-0" />
+                <div className="flex flex-col">
+                  <span className="text-[9px] tracking-wider text-cream/70 font-bold uppercase">Booking & Enquiries</span>
+                  <a href={`tel:${BUSINESS.phoneRaw}`} className="text-[16px] font-extrabold tracking-wide hover:underline text-cream leading-tight">
+                    {BUSINESS.phone}
+                  </a>
+                </div>
               </div>
               <a 
                 href="#book" 
